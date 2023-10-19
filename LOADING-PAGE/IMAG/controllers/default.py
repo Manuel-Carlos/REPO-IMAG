@@ -39,7 +39,7 @@ def criar():
 def pergunta():
 
     return render_template('perguntas.html')
-@IMAG.route('https://angola-imag.github.io/REPO-IMAG/LOADING-PAGE/IMAG/templates/index.html/login', methods=['POST', 'GET'])
+@IMAG.route('/index.html/login', methods=['POST', 'GET'])
 def login():
     if ('user' in session):
         return f'online {session["user"]}'
