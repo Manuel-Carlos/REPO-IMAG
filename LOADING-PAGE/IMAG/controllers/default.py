@@ -52,7 +52,7 @@ def login():
             return redirect('/app-aluno')
         except:
             return 'falhou ao entrar para sua conta! Tente de novo'
-    return render_template('login.html')
+    return render_template('templates.login.html')
 @IMAG.route('/logout')
 @IMAG.route('/app-aluno/logout')
 def logout():
