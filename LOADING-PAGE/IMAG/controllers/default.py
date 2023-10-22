@@ -18,7 +18,7 @@ config={
 firebase=pyrebase.initialize_app(config)
 auth=firebase.auth()
 IMAG.secret_key='IMAGSEGURA'
-@IMAG.route('/templates/')
+@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/')
 @IMAG.route('/')
 def home():
     return render_template('index.html')
@@ -36,10 +36,10 @@ def criar():
             return 'falhou na criação da sua conta! Tente de novo'
 
     return render_template('criar.html')
-@IMAG.route('/templates/perguntas')
+@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/perguntas')
 def pergunta():
     return render_template('perguntas.html')
-@IMAG.route('/templates/login', methods=['POST', 'GET'])
+@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/login', methods=['POST', 'GET'])
 def login():
     if ('user' in session):
         return f'online {session["user"]}'
@@ -49,16 +49,16 @@ def login():
         try:
             user = auth.sign_in_with_email_and_password(email, senha)
             session['user']=email
-            return redirect('/templates/app-aluno')
+            return redirect('/REPO-IMAG/LOADING-PAGE/IMAG/templates/app-aluno')
         except:
             return 'falhou ao entrar para sua conta! Tente de novo'
     return render_template('login.html')
-@IMAG.route('/templates/logout')
-@IMAG.route('/templates/app-aluno/logout')
+@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/logout')
+@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/app-aluno/logout')
 def logout():
     session.pop('user')
     return redirect('/templates/')
-@IMAG.route('/templates/app-aluno')
+@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/app-aluno')
 def app_aluno():
     if ('user' in session):
         return render_template('app-aluno.html')
