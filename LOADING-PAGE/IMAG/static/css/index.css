@@ -6,7 +6,6 @@ font-family: 'Oswald', sans-serif;*/
     box-sizing: border-box;
     padding:0;
     margin:0;
-    border:0.7px dashed brown
     font-family:inter;
 }
 :root{
@@ -41,7 +40,7 @@ header figure{
 
 }
 header figure text{
-    font-size:100px;
+    font-size:65px;
     background: url('../image/back.png'), lightgray 50% / cover no-repeat;
     background-clip: text;
     -webkit-background-clip: text;
@@ -72,11 +71,12 @@ header nav ul li a{
  text-decoration:none;
  color:white;
  style-list:none;
- font-size: 18px;
+ font-size: 15px;
  font-style: normal;
  font-weight: 400;
  line-height: normal;
  font-family: 'Inter', sans-serif;
+ max-widht:100px;
 
 }
 header nav ul li{
@@ -92,7 +92,7 @@ main{
  justify-content:flex-start;
  align-center:center;
  flex-direction:column;
- margin-top:150px;
+ margin-top:115px;
  background:yellow;
  width:100%;
  height:100vh;
@@ -208,7 +208,7 @@ text-shadow: 1px 1px 2px black,
 .dep:hover {
  border-bottom: 5px solid var(--bg-cast);
  font-weight:bold;
- padding-top:80px;
+ padding-top:60px;
  transition:linear border-bottom:.4s;
  animation-name:top;
  animation-duration:1.8s;

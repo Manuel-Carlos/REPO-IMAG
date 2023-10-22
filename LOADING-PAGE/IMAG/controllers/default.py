@@ -18,11 +18,12 @@ config={
 firebase=pyrebase.initialize_app(config)
 auth=firebase.auth()
 IMAG.secret_key='IMAGSEGURA'
+@IMAG.route('/templates/')
 @IMAG.route('/')
 def home():
     return render_template('index.html')
 
-@IMAG.route('/criar', methods=['POST', 'GET'])
+@IMAG.route('/templates/criar', methods=['POST', 'GET'])
 def criar():
     if request.method=='POST':
         nome = request.form.get("nome")
@@ -30,14 +31,13 @@ def criar():
         senha = request.form.get("passe")
         try:
             user = auth.create_user_with_email_and_password(email, senha)
-            return redirect('/criar/perguntas')
+            return redirect('/templates/perguntas')
         except:
             return 'falhou na criação da sua conta! Tente de novo'
 
     return render_template('criar.html')
-@IMAG.route('/criar/perguntas')
+@IMAG.route('/templates/perguntas')
 def pergunta():
-
     return render_template('perguntas.html')
 @IMAG.route('/templates/login', methods=['POST', 'GET'])
 def login():
@@ -49,18 +49,20 @@ def login():
         try:
             user = auth.sign_in_with_email_and_password(email, senha)
             session['user']=email
-            return redirect('/app-aluno')
+            return redirect('/templates/app-aluno')
         except:
             return 'falhou ao entrar para sua conta! Tente de novo'
-    return render_template('templates.login.html')
-@IMAG.route('/logout')
-@IMAG.route('/app-aluno/logout')
+    return render_template('login.html')
+@IMAG.route('/templates/logout')
+@IMAG.route('/templates/app-aluno/logout')
 def logout():
     session.pop('user')
-    return redirect('/')
-@IMAG.route('/app-aluno')
+    return redirect('/templates/')
+@IMAG.route('/templates/app-aluno')
 def app_aluno():
-
-    return render_template('app-aluno.html')
+    if ('user' in session):
+        return render_template('app-aluno.html')
+    if not('user' in session):
+        return 'precisa-se de fazer o login'
 
 

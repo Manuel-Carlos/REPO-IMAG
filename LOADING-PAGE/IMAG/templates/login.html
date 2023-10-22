@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../static/css/criar.css">
+    <link rel="stylesheet" href="../static/css/login.css">
     <title>IMAG | login</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
         <a href="/">voltar</a>
     </button>
     <img src="../static/image/back.png" alt="foto de fundo">
-    <div>
+    <div id="form">
         <h1>Login</h1>
             <form action="/templates/login" method="Post">
                 <label class="label-ms" for="email">Email</label>
@@ -22,11 +22,14 @@
                 <input class="input-ms" name="passe-lg" type="password" required placeholder="criar a sua password">
                 <j>
                     <input id="chek"name="chek" type="checkbox">
-                    <label for="chek">concorda com os nossos termos?</label>
+                    <label for="chek">salvar</label>
                 </j>
                 <button id="sub" type="submit">Enviar</button>
-                <t>Ainda não tens uma conta?<a href="/criar">clique aqui</a</t>
+                <t>Ainda não tens uma conta?<a href="/templates/criar">clique aqui</a</t>
+
             </form>
     </div>
+    <div id="ile"></div>
+
 </body>
 </html>
