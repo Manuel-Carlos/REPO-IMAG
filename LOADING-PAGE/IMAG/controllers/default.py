@@ -23,7 +23,7 @@ IMAG.secret_key='IMAGSEGURA'
 def home():
     return render_template('index.html')
 
-@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/criar', methods=['POST', 'GET'])
+@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/criar', methods=['POST'])
 def criar():
     if request.method=='POST':
         nome = request.form.get("nome")
@@ -41,7 +41,7 @@ def criar():
 def pergunta():
     return render_template('perguntas.html')
 
-@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/login', methods=['POST', 'GET'])
+@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/login', methods=['POST'])
 def login():
     if ('user' in session):
         return f'online {session["user"]}'
