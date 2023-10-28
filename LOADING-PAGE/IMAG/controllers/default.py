@@ -2,7 +2,6 @@ from IMAG import IMAG
 from flask import Flask, render_template,redirect,request,flash,session
 import pyrebase
 
-
 config={
     'apiKey': "AIzaSyAIy3aojg0QbqJLeDUgP5lrDTVjRqbRRrk",
     'authDomain': "meu-imagv-b84d5.firebaseapp.com",
@@ -18,7 +17,8 @@ config={
 firebase=pyrebase.initialize_app(config)
 auth=firebase.auth()
 IMAG.secret_key='IMAGSEGURA'
-@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/')
+
+@IMAG.route('/templates/')
 @IMAG.route('/')
 def home():
     return render_template('index.html')
@@ -36,10 +36,12 @@ def criar():
             return 'falhou na criação da sua conta! Tente de novo'
 
     return render_template('criar.html')
-@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/perguntas')
+
+@IMAG.route('/templates/perguntas')
 def pergunta():
     return render_template('perguntas.html')
-@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/login', methods=['POST', 'GET'])
+
+@IMAG.route('/templates/login', methods=['POST', 'GET'])
 def login():
     if ('user' in session):
         return f'online {session["user"]}'
@@ -49,20 +51,48 @@ def login():
         try:
             user = auth.sign_in_with_email_and_password(email, senha)
             session['user']=email
-            return redirect('/REPO-IMAG/LOADING-PAGE/IMAG/templates/app-aluno')
+            return redirect('/templates/app-aluno')
         except:
             return 'falhou ao entrar para sua conta! Tente de novo'
     return render_template('login.html')
-@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/logout')
-@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/app-aluno/logout')
+
+@IMAG.route('/templates/logout')
+@IMAG.route('/templates/app-aluno/logout')
 def logout():
     session.pop('user')
     return redirect('/templates/')
-@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/app-aluno')
+@IMAG.route('/templates/app-aluno')
 def app_aluno():
     if ('user' in session):
         return render_template('app-aluno.html')
     if not('user' in session):
-        return 'precisa-se de fazer o login'
+        return  """
+        <style>  
+        
+           body{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+           }
+            #error{
+            background:#1A4E69;
+            color:#BB6763;
+            border-radius:20px;
+            padding:10px;
+            font-size:20px;
+
+            }
+            a{
+             text-decoration:none;
+             color:#1A4E69;
+             background:#BB6763;
+             border-radius:20px;
+             padding:10px;
+            }
+            
+            
+        </style>
+        <title>IMAG ! ERROR </title>
+        <h1 id="error"> precisa-se de fazer o <a href='/templates/login'>login</a> se não tiver nenhuma conta pode se cadastrar <a id="criar" href='/templates/criar'>criar</a></h1>"""
 
 

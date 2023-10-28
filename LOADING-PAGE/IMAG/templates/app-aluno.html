@@ -7,11 +7,11 @@
 <body>
 {% set mensagem = get_flashed_messages() %}
 {% if mensagem%}
- <div class="flash_alerta">
-     {{ mensagem[0]}}
- </div>
+     <div class="flash_alerta">
+         {{ mensagem[0]}}
+     </div>
 {% endif%}
 
- <h1> bem vindo aluno{{ aluno }}</h1>
+ <h1> bem vindo aluno {{ nome }}</h1>
 </body>
 </html>
