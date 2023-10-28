@@ -41,7 +41,7 @@ def criar():
 def pergunta():
     return render_template('perguntas.html')
 
-@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/login', methods=['POST', 'GET'])
+@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/login', methods=['POST'])
 def login():
     if ('user' in session):
         return f'online {session["user"]}'
