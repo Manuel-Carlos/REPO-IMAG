@@ -11,7 +11,7 @@ config={
     'messagingSenderId': "319800728840",
     'appId': "1:319800728840:web:5b0e314ac197dbbda3e0bd",
     'measurementId': "G-KH9SQTKGZ1",
-    'databaseURL':''
+    'databaseURL':'',
 }
 
 firebase=pyrebase.initialize_app(config)
@@ -41,7 +41,7 @@ def criar():
 def pergunta():
     return render_template('perguntas.html')
 
-@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/login', methods=['GET'])
+@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/login', methods=['POST', 'GET'])
 def login():
     if ('user' in session):
         return f'online {session["user"]}'
@@ -61,6 +61,7 @@ def login():
 def logout():
     session.pop('user')
     return redirect('/REPO-IMAG/LOADING-PAGE/IMAG/templates/')
+    
 @IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/app-aluno')
 def app_aluno():
     if ('user' in session):
