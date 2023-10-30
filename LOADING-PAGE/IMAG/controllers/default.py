@@ -18,7 +18,7 @@ firebase=pyrebase.initialize_app(config)
 auth=firebase.auth()
 IMAG.secret_key='IMAGSEGURA'
 
-@IMAG.route('/home')
+@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/')
 @IMAG.route('/')
 def home():
     return render_template('index.html')
@@ -33,7 +33,7 @@ def criar():
         try:
             user = auth.create_user_with_email_and_password(email, senha)
             session['user']=nome
-            return redirect('/perguntas')
+            return redirect('/REPO-IMAG/LOADING-PAGE/IMAG/templates/perguntas')
         except:
             return"""
             <style>  
@@ -60,15 +60,15 @@ def criar():
              </style>
              <title>IMAG ! ERROR </title>
              
-            <h1 id="error">falhou ao criar a sua conta! <a href="/criar">Tente de novo</a></h1>"""
+            <h1 id="error">falhou ao criar a sua conta! <a href="/REPO-IMAG/LOADING-PAGE/IMAG/templates/criar">Tente de novo</a></h1>"""
 
     return render_template('criar.html')
 
-@IMAG.route('/perguntas')
+@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/perguntas')
 def pergunta():
     return render_template('perguntas.html')
 
-@IMAG.route('/login', methods=['POST', 'GET'])
+@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/login', methods=['POST', 'GET'])
 def login():
     if ('user' in session):
         return f'online {session["user"]}'
@@ -78,7 +78,7 @@ def login():
         try:
             user = auth.sign_in_with_email_and_password(email, senha)
             session['user']=email
-            return redirect('/app-aluno')
+            return redirect('/REPO-IMAG/LOADING-PAGE/IMAG/templates/app-aluno')
         except:
             return """
             <style>  
@@ -104,15 +104,15 @@ def login():
                  }          
              </style>
              <title>IMAG ! ERROR </title>
-            <h1 id="error">falhou ao entrar para sua conta! <a href="/login">Tente de novo</a></h1>"""
+            <h1 id="error">falhou ao entrar para sua conta! <a href="/REPO-IMAG/LOADING-PAGE/IMAG/templates/login">Tente de novo</a></h1>"""
     return render_template('login.html')
 
-@IMAG.route('/logout')
-@IMAG.route('/app-aluno/logout')
+@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/logout')
+@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/app-aluno/logout')
 def logout():
     session.pop('user')
     return redirect('/')
-@IMAG.route('/app-aluno')
+@IMAG.route('/REPO-IMAG/LOADING-PAGE/IMAG/templates/app-aluno')
 def app_aluno():
     if ('user' in session):
         return render_template('app-aluno.html')
@@ -144,6 +144,6 @@ def app_aluno():
             
         </style>
         <title>IMAG ! ERROR </title>
-        <h1 id="error"> precisa-se de fazer o <a href='/login'>login</a> se não tiver nenhuma conta pode se cadastrar <a id="criar" href='/criar'>criar</a></h1>"""
+        <h1 id="error"> precisa-se de fazer o <a href='/REPO-IMAG/LOADING-PAGE/IMAG/templates/login'>login</a> se não tiver nenhuma conta pode se cadastrar <a id="criar" href='/REPO-IMAG/LOADING-PAGE/IMAG/templates/criar'>criar</a></h1>"""
 
 
