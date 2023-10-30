@@ -44,7 +44,7 @@ header figure{
     margin:10px;
 
 }
-header figure text{
+header figure h1{
     font-size:65px;
     background: url('../image/back.png'), lightgray 50% / cover no-repeat;
     background-clip: text;
@@ -65,6 +65,7 @@ padding:10px;
 margin-right:40px;
 gap:40px;
 
+
 }
 header nav ul{
  display:flex;
@@ -76,17 +77,17 @@ header nav ul li a{
  text-decoration:none;
  color:white;
  style-list:none;
- font-size: 18px;
+ font-size: 20px;
  font-style: normal;
- font-weight: 400;
+ font-weight: 600;
  line-height: normal;
  font-family: 'Inter', sans-serif;
- max-widht:100px;
+ max-width:100px;
 
 }
 header nav ul li{
  list-style:none;
-transition:linear .4s;
+ transition:linear .4s;
 }
             /*--------------------------------*/
             /*-----------MAIN-----------------*/
@@ -104,12 +105,11 @@ main{
 
 }
 body::-webkit-scrollbar {
-  width: 12px;               /* width of the entire scrollbar */
-    border-radius:10px;
+  width: 18px;               /* width of the entire scrollbar */
+  border-radius:10px;
 }
-
 body::-webkit-scrollbar-track {
-    background: var(--bg-cast);   /* color of the tracking area */
+    background: var(--bg-az);   /* color of the tracking area */
 
  }
 body::-webkit-scrollbar-thumb {
@@ -125,7 +125,7 @@ body::-webkit-scrollbar-thumb {
 
 
 }
-#inicio p{
+#inicio h1{
 color: var(--bg-cast);
 font-family: Inter;
 font-size: 63px;
@@ -135,7 +135,7 @@ line-height: normal;
 width: 493px;
 position:absolute;
 top:300px;
-left:100px;
+left:25px;
 text-shadow: 1px 1px 2px black,
     0 0 1em var(--bg-cast),
     0 0 0.2em var(--bg-cast);
@@ -170,6 +170,7 @@ text-shadow: 1px 1px 2px black,
   justify-content:center;
   padding-top:50px;
   gap:30px;
+
 
 }
 #quemsomos div{
@@ -275,3 +276,5 @@ text-shadow: 1px 1px 2px black,
     transform: translateX(-30px);
     }
 }
+
+

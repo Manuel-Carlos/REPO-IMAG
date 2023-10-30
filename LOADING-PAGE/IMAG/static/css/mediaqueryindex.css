@@ -1,0 +1,158 @@
+:root{
+    --bg-cast:#BB6763;
+    --bg-az:#1A4E69;
+}
+
+/* Smartphones (600px para baixo) */
+@media only screen and (max-width: 600px) {
+        *{
+          /*border:0.3px dashed brown;*/
+        }
+        #nav-link{
+            display:block;
+            position:absolute;
+            top:0;
+            right:-50px;
+
+            background:var(--bg-az);
+            flex-direction:column;
+            height:100vh;
+
+
+
+        }
+        nav ul{
+            flex-direction:column;
+
+
+        }
+        nav ul li.dep{
+          margin-bottom:120px;
+
+        }
+        nav ul.ul-contas{
+         flex-direction:row;
+
+
+        }
+        #quemsomos{
+                height:auto;
+        }
+}
+
+/* Dispositivos um pouco maiores, mas ainda pequenos (Pequenos Tablets e Smartphones + largos, 600px para cima) */
+@media only screen and (min-width: 600px) {
+        *{
+          /*border:0.3px dashed pink;*/
+        }
+        .nav-link{
+            display:block;
+            position:absolute;
+            top:0;
+            right:-50px;
+
+            background:var(--bg-az);
+            flex-direction:column;
+            height:100vh;
+
+
+
+        }
+        nav ul{
+            flex-direction:column;
+
+
+        }
+        nav ul li.dep{
+          margin-bottom:120px;
+
+        }
+        nav ul.ul-contas{
+         flex-direction:row;
+
+
+        }
+
+}
+
+@media only screen and (max-width: 768px) {
+        *{
+          /*border:0.3px dashed blue;*/
+
+        }
+        header nav{
+            position:absolute;
+            top:0;
+            right:-50px;
+            background:var(--bg-az);
+            flex-direction:column;
+            height:100vh;
+
+
+        }
+        nav ul{
+            flex-direction:column;
+
+
+        }
+        nav ul li.dep{
+          margin-bottom:120px;
+
+        }
+        nav ul.ul-contas{
+         flex-direction:row;
+
+
+        }
+}
+
+/* Dispostivos Largos (laptops/desktops, 992px para cima) */
+@media only screen and (min-width: 992px) {
+        *{
+          /*border:0.3px dashed orange;*/
+        }
+       header #nav{
+         position:relative;
+         display:flex;
+
+         flex-direction:row;
+         background:none;
+         right:0;
+         top:10px;
+         height:auto;
+         width:auto
+
+
+       }
+       header #nav ul{
+          flex-direction:row
+       }
+
+       #nav ul li.dep{
+        margin-bottom:0;
+        font-size:10px;
+
+       }
+       header #nav ul li a{
+          font-size: 15px;
+       }
+
+
+
+}
+
+/* Super Largos (Telas maiores laptops, desktops e até TVs, 1200px para cima) */
+@media only screen and (min-width: 1200px) {
+        *{
+          /*border:0.3px dashed green;*/
+        }
+
+
+}
+
+
+
+
+
+
+

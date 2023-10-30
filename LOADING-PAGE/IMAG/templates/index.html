@@ -1,45 +1,47 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="../static/css/mediaqueryindex.css">
     <link rel="stylesheet" href="../static/css/index.css">
-     <!-- FAVICON-->
-    <link rel = "apple-touch-icon" tamanhos = "180x180" href = "../static/apple-touch-icon.png">
-    <link rel = "icon" type = "image/png" tamanhos = "32x32" href = "../static/favicon-32x32.png">
-    <link rel = "icon" type = "image/png" tamanhos = "16x16" href = "../static/favicon-16x16.png">
+
+    <!-- FAVICON-->
+    <link rel = "apple-touch-icon" tamanhos = "180x180" href = "../static/image/apple-touch-icon.png">
+    <link rel = "icon" type = "image/png" tamanhos = "32x32" href = "../static/image/favicon-32x32.png">
+    <link rel = "icon" type = "image/png" tamanhos = "16x16" href = "../static/image/favicon-16x16.png">
     <link rel = "manifest" href = "../static/site.webmanifest">
-    <title>IMAG</title>
+    <title>IMAG | LOADING PAGE</title>
 
 </head>
 <body>
 <header>
     <figure>
-        <text>
+        <h1>
             <a href="#">IMAG</a>
-        </text>
+        </h1>
     </figure>
-    <nav>
+    <nav id="nav" class="nav-link">
         <ul>
             <li class="dep"><a href="#inicio">Ínicio</a></li>
             <li class="dep"><a href="#quemsomos">Quem somos?</a></li>
-            <li class="dep"><a href="#">Quantos somos?</a></li>
-            <li class="dep"><a href="#">Onde nós estamos?</a></li>
-            <li class="dep"><a href="#">Contactos</a></li>
+            <li class="dep"><a href="#quantosomos">Quantos somos?</a></li>
+            <li class="dep"><a href="#ondenosestamos">Onde nós estamos?</a></li>
+            <li class="dep"><a href="#contactos">Contactos</a></li>
         </ul>
-        <ul>
-            <li class="conta"><a  href="/REPO-IMAG/LOADING-PAGE/IMAG/templates/login">Entrar</a></li>
-            <li class="conta"><a href="/REPO-IMAG/LOADING-PAGE/IMAG/templates/criar">Criar</a></li>
+        <ul class="ul-contas">
+            <li class="conta"><a  href="/login">Entrar</a></li>
+            <li class="conta"><a href="/criar">Criar</a></li>
         </ul>
     </nav>
 </header>
 <main>
     <section id="inicio">
         <img src="../static/image/alunafeliz.png" alt="imagem da escola">
-        <p>
+        <h1 id="tit">
           Instituto Médio de Gestão e Administração
-        </p>
+        </h1>
 
     </section>
     <section id="quemsomos">
@@ -58,13 +60,14 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci delectus doloremque enim error
                 eveniet ipsa ipsam, itaque iusto molestias mollitia obcaecati officia quae reprehenderit repudiandae
                 sunt velit vero voluptate voluptates.
-            </p></div>
+            </p>
+        </div>
         <div>
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci delectus doloremque enim error eveniet
-            ipsa ipsam, itaque iusto molestias mollitia obcaecati officia quae reprehenderit repudiandae sunt velit vero
-            voluptate voluptates.
-        </p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci delectus doloremque enim error eveniet
+                ipsa ipsam, itaque iusto molestias mollitia obcaecati officia quae reprehenderit repudiandae sunt velit vero
+                voluptate voluptates.
+            </p>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci delectus doloremque enim error
                 eveniet ipsa ipsam, itaque iusto molestias mollitia obcaecati officia quae reprehenderit repudiandae
@@ -74,7 +77,8 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci delectus doloremque enim error
                 eveniet ipsa ipsam, itaque iusto molestias mollitia obcaecati officia quae reprehenderit repudiandae
                 sunt velit vero voluptate voluptates.
-            </p></div>
+            </p>
+        </div>
     </section>
 
 </main>
