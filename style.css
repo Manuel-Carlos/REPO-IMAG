@@ -1,0 +1,46 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+
+}
+
+h2{
+    border-radius: 10px blue;
+    padding: 5px;
+}
+
+.container{
+    display: inline-block;
+    margin: auto;
+    padding: auto;
+    background-color: rgb(245, 213, 220);
+    max-width: 600px;
+    height: 500px;
+}
+
+ul{
+    text-decoration: none;
+}
+.listas a{
+    text-decoration: none;
+    word-spacing: 10px;
+    color: black;
+    line-height: 30px;
+    text-transform: capitalize;
+}
+
+a:hover{
+    
+    font-size: 15px;    
+    color: white;
+    
+}
+
+/*estilo da pagina aluno.html*/
+
+input{
+    border: blue;
+    padding: 10px;
+    margin: 20px;
+    
+}
